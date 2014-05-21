@@ -1,0 +1,30 @@
+{
+  "name": "react-ladda",
+  "version": "0.0.0",
+  "description": "React wrapper for Ladda buttons.",
+  "main": "index.coffee",
+  "peerDependencies": {
+    "react": "^0.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jsdir/react-ladda.git"
+  },
+  "browserify": {
+    "transform": ["coffeeify"]
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "ladda"
+  ],
+  "author": "Jason Sommer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsdir/react-ladda/issues"
+  },
+  "homepage": "https://github.com/jsdir/react-ladda"
+}
