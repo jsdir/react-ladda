@@ -3,6 +3,20 @@ react-ladda
 
 React wrapper for [Ladda buttons](https://github.com/hakimel/Ladda).
 
+Installation
+------------
+
+```sh
+npm install --save react-ladda
+```
+
+Browserify takes care of the rest.
+
+Usage
+-----
+
+`LaddaButton` is a component that can be wrapped around any single button:
+
 ```js
 /** @jsx React.DOM */
 
@@ -28,7 +42,7 @@ App = React.createClass({
 React.renderComponent(<App />, document.body);
 ```
 
-react-ladda supports all options for ladda buttons:
+All of the options for ladda buttons are supported:
 
 ```js
 <LaddaButton
