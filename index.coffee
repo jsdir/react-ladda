@@ -21,7 +21,7 @@ LaddaButton = React.createClass
     @laddaButton = Ladda.create @getDOMNode()
 
   componentWillUnmount: ->
-    @laddaButton.remove()
+    @laddaButton.remove?()
 
   shouldComponentUpdate: (nextProps, nextState) ->
     not shallowEqual @props, nextProps
