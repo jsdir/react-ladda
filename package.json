@@ -1,6 +1,6 @@
 {
   "name": "react-ladda",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React wrapper for Ladda buttons.",
   "main": "index.coffee",
   "peerDependencies": {
