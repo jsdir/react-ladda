@@ -9,6 +9,7 @@ LaddaButton = React.createClass
     style: "expand-left"
 
   propTypes:
+    onClick: React.PropTypes.func
     active: React.PropTypes.bool
     progress: React.PropTypes.number
     style: React.PropTypes.string
@@ -40,6 +41,9 @@ LaddaButton = React.createClass
     if @props.progress
       @laddaButton.setProgress @props.progress
 
+  onClick: (args...) ->
+    @props.onClick? args...
+
   getButtonClassName: (className) ->
     laddaClass = "ladda-button"
 
@@ -51,6 +55,7 @@ LaddaButton = React.createClass
   render: ->
     props = @props.children.props
     props.className = @getButtonClassName props.className
+    props.onClick = @onClick
 
     # Set ladda options.
     options =
