@@ -2,7 +2,7 @@
   "name": "react-ladda",
   "version": "0.1.2",
   "description": "React wrapper for Ladda buttons.",
-  "main": "index.coffee",
+  "main": "index.js",
   "peerDependencies": {
     "react": "^0.10.0"
   },
@@ -12,9 +12,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/jsdir/react-ladda.git"
-  },
-  "browserify": {
-    "transform": ["coffeeify"]
   },
   "keywords": [
     "react",
