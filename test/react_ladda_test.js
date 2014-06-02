@@ -5,6 +5,6 @@ var LaddaButton = require('..');
 
 describe('LaddaButton', function() {
   it('should work', function() {
-    //button = LaddaButton()
+    button = LaddaButton();
   });
 });

@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "./node_modules/karma/bin/karma start karma.conf.js",
-    "test-watch": "./node_modules/karma/bin/karma start --auto-watch --browsers Chrome --no-single-run karma.conf.js"
+    "watch-test": "./node_modules/karma/bin/karma start --auto-watch --browsers Chrome --no-single-run karma.conf.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "watchify": "~0.10.2",
     "karma-bro": "git://github.com/jsdir/karma-bro.git",
     "karma-chrome-launcher": "~0.1.4",
+    "karma-phantomjs-launcher": "~0.1.4",
     "react": "~0.10.0",
     "browserify": "~4.1.6",
     "browserify-shim": "~3.5.0",
