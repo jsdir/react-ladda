@@ -1,0 +1,7 @@
+{
+  "name": "react-ladda",
+  "private": true,
+  "dependencies": {
+    "ladda": "~0.9.3"
+  }
+}
