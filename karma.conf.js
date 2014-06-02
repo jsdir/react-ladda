@@ -1,7 +1,7 @@
 module.exports = function(karma) {
   karma.set({
 
-    frameworks: ['browserify', 'mocha'],
+    frameworks: ['browserify', 'mocha', 'sinon-chai'],
 
     files: [
       'node_modules/es5-shim/es5-shim.js',
@@ -17,6 +17,7 @@ module.exports = function(karma) {
     },
 
     browserify: {
+      debug: true,
       transform: ['debowerify']
     }
   });

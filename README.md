@@ -26,6 +26,10 @@ LaddaButton = require('react-ladda');
 App = React.createClass({
   displayName: 'App',
 
+  getInitialState: function() {
+    return {active: false};
+  },
+
   toggle: function() {
     this.setState({active: !this.state.active});
   },
@@ -51,7 +55,8 @@ All of the options for ladda buttons are supported:
     color="#eee"
     size="xl"
     spinnerSize={30}
-    spinnerColor="#ddd">
+    spinnerColor="#ddd"
+    style="slide-up">
   <button>Click here</button>
 </LaddaButton>
 ```

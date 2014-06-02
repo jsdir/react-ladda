@@ -13,7 +13,8 @@ LaddaButton = React.createClass({
     color: React.PropTypes.string,
     size: React.PropTypes.string,
     spinnerSize: React.PropTypes.number,
-    spinnerColor: React.PropTypes.string
+    spinnerColor: React.PropTypes.string,
+    children: React.PropTypes.renderable.isRequired
   },
 
   getDefaultProps: function() {
@@ -74,7 +75,7 @@ LaddaButton = React.createClass({
       props.className = laddaClass;
     }
 
-    return this.transferPropsTo(cloneWithProps(this.props.children, props));
+    return cloneWithProps(this.props.children, props);
   }
 });
 
