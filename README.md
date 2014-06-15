@@ -8,11 +8,31 @@ React wrapper for [Ladda buttons](https://github.com/hakimel/Ladda).
 Installation
 ------------
 
+Install the package:
+
 ```sh
-npm install --save react-ladda
+$ npm install --save react-ladda
 ```
 
-Browserify takes care of the rest.
+Install ladda using bower:
+
+```sh
+$ bower install --save ladda
+```
+
+Since react-ladda depends on ladda, we can require ladda with the [debowerify](https://github.com/eugeneware/debowerify) transform.
+
+```sh
+$ npm install --save-dev debowerify
+```
+
+Make sure to run the debowerify as a global transform so that ladda can be required by react-ladda. Browserify takes care of the rest.
+
+```sh
+$ cat source.js
+var LaddaButton = require('react-ladda');
+$ browserify -g debowerify source.js > compiled.js
+```
 
 Usage
 -----
