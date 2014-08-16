@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "./node_modules/karma/bin/karma start karma.conf.js",
-    "watch-test": "./node_modules/karma/bin/karma start --auto-watch --browsers Chrome --no-single-run karma.conf.js"
+    "watch": "./node_modules/karma/bin/karma start --auto-watch --browsers Chrome --no-single-run karma.conf.js"
   },
   "repository": {
     "type": "git",
