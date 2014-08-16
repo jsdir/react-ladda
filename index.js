@@ -7,6 +7,7 @@ LaddaButton = React.createClass({
   displayName: 'LaddaButton',
 
   propTypes: {
+    onClick: React.PropTypes.func,
     active: React.PropTypes.bool,
     progress: React.PropTypes.number,
     style: React.PropTypes.string,
@@ -51,7 +52,7 @@ LaddaButton = React.createClass({
   },
 
   render: function() {
-    var props = {};
+    var props = {onClick: this.props.onClick};
     var options = {
       style: 'data-style',
       color: 'data-color',
