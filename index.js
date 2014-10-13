@@ -7,7 +7,6 @@ LaddaButton = React.createClass({
   displayName: 'LaddaButton',
 
   propTypes: {
-    onClick: React.PropTypes.func,
     active: React.PropTypes.bool,
     progress: React.PropTypes.number,
     style: React.PropTypes.string,
@@ -52,8 +51,8 @@ LaddaButton = React.createClass({
   },
 
   render: function() {
-    var props = {onClick: this.props.onClick};
-    var options = {
+    var props = {className: 'ladda-button'};
+    var laddaOptions = {
       style: 'data-style',
       color: 'data-color',
       size: 'data-size',
@@ -61,19 +60,11 @@ LaddaButton = React.createClass({
       spinnerColor: 'data-spinner-color'
     };
 
-    for (prop in options) {
-      var dataAttr = options[prop];
+    for (prop in laddaOptions) {
+      var dataAttr = laddaOptions[prop];
       if (this.props[prop]) {
         props[dataAttr] = this.props[prop];
       }
-    }
-
-    // Set ladda className.
-    var laddaClass = 'ladda-button';
-    if (props.className) {
-      props.className += (' ' + laddaClass);
-    } else {
-      props.className = laddaClass;
     }
 
     return cloneWithProps(this.props.children, props);
