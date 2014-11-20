@@ -7,7 +7,7 @@ var React = require('react');
 var TestUtils = require('react/lib/ReactTestUtils')
 var Ladda = require('ladda');
 
-var LaddaButton = require('..');
+var LaddaButton = React.createFactory(require('..'));
 
 sinon.spy(Ladda, 'create');
 
@@ -23,7 +23,7 @@ describe('LaddaButton', function() {
   }
 
   function getElAttributes(button) {
-    React.renderComponent(button, document.body);
+    React.render(button, document.body);
     var el = Ladda.create.lastCall.args[0];
     return el.attributes;
   }
