@@ -1,9 +1,9 @@
-React = require('react');
-shallowEqual = require('react/lib/shallowEqual');
-cloneWithProps = require('react/lib/cloneWithProps');
-Ladda = require('ladda');
+var React = require('react');
+var shallowEqual = require('react/lib/shallowEqual');
+var cloneWithProps = require('react/lib/cloneWithProps');
+var Ladda = require('ladda');
 
-LaddaButton = React.createClass({
+var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
 
   propTypes: {
@@ -60,7 +60,7 @@ LaddaButton = React.createClass({
       spinnerColor: 'data-spinner-color'
     };
 
-    for (prop in laddaOptions) {
+    for (var prop in laddaOptions) {
       var dataAttr = laddaOptions[prop];
       if (this.props[prop]) {
         props[dataAttr] = this.props[prop];
