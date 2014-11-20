@@ -1,7 +1,7 @@
 react-ladda
 ===========
 
-[![Build Status](https://travis-ci.org/jsdir/react-ladda.png)](https://travis-ci.org/jsdir/react-ladda) [![Dependency Status](https://david-dm.org/jsdir/react-ladda.svg)](https://david-dm.org/jsdir/react-ladda) [![NPM version](https://badge.fury.io/js/react-ladda.png)](http://badge.fury.io/js/react-ladda)
+[![Build Status](https://img.shields.io/travis/jsdir/react-ladda.svg?style=flat)](https://travis-ci.org/jsdir/react-ladda) [![Dependency Status](https://img.shields.io/david/jsdir/react-ladda.svg?style=flat)](https://david-dm.org/jsdir/react-ladda) [![NPM version](https://img.shields.io/npm/v/react-ladda.svg?style=flat)](https://www.npmjs.org/package/react-ladda)
 
 React wrapper for [Ladda buttons](https://github.com/hakimel/Ladda).
 
