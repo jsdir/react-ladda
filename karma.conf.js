@@ -12,15 +12,24 @@ module.exports = function(karma) {
 
     browsers: ['PhantomJS'],
 
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
 
     preprocessors: {
-      'test/**/*.js': ['browserify']
+      'test/**/*.js': 'browserify',
+      '**/*.js': 'coverage'
     },
 
     browserify: {
       debug: true,
       transform: ['debowerify']
+    },
+
+    coverageReporter: {
+      dir: 'coverage',
+      reporters: [
+        {type: 'lcov', subdir: 'lcov'},
+        {type: 'text-summary'}
+      ]
     }
   });
-}
+};
