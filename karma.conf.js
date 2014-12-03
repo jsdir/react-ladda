@@ -19,10 +19,7 @@ module.exports = function(karma) {
       '**/*.js': 'coverage'
     },
 
-    browserify: {
-      debug: true,
-      transform: ['debowerify']
-    },
+    browserify: {debug: true},
 
     coverageReporter: {
       dir: 'coverage',

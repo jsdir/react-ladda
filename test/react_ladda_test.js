@@ -5,7 +5,7 @@ chai.use(sinonChai);
 
 var React = require('react');
 var TestUtils = require('react/lib/ReactTestUtils')
-var Ladda = require('ladda');
+var Ladda = require('ladda/dist/ladda.min');
 
 var LaddaButton = React.createFactory(require('..'));
 

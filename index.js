@@ -1,7 +1,7 @@
 var React = require('react');
 var shallowEqual = require('react/lib/shallowEqual');
 var cloneWithProps = require('react/lib/cloneWithProps');
-var Ladda = require('ladda');
+var Ladda = require('ladda/dist/ladda.min');
 
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
