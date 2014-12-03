@@ -1,26 +1,21 @@
 module.exports = function(karma) {
   karma.set({
-
     frameworks: ['browserify', 'mocha', 'sinon-chai'],
-
+    singleRun: true,
+    browsers: ['PhantomJS'],
+    reporters: ['spec', 'coverage'],
+    browserify: {
+      debug: true,
+      transform: ['browserify-istanbul']
+    },
     files: [
       'node_modules/es5-shim/es5-shim.js',
       'test/**/*.js'
     ],
-
-    singleRun: true,
-
-    browsers: ['PhantomJS'],
-
-    reporters: ['spec', 'coverage'],
-
     preprocessors: {
       'test/**/*.js': 'browserify',
-      '**/*.js': 'coverage'
+      'index.js': ['coverage']
     },
-
-    browserify: {debug: true},
-
     coverageReporter: {
       dir: 'coverage',
       reporters: [
