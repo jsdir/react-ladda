@@ -4,8 +4,7 @@ node_js:
   - 0.10
 
 before_script:
-  - npm install -g bower codeclimate-test-reporter
-  - bower install
+  - npm install -g codeclimate-test-reporter
 
 addons:
   code_climate:
