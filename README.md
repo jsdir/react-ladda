@@ -45,7 +45,7 @@ App = React.createClass({
   }
 });
 
-React.renderComponent(<App />, document.body);
+React.render(<App />, document.body);
 ```
 
 All of the options for ladda buttons are supported:
