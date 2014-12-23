@@ -7,8 +7,7 @@
     "react": "0.12.x"
   },
   "scripts": {
-    "test": "./node_modules/karma/bin/karma start karma.conf.js",
-    "watch": "./node_modules/karma/bin/karma start --auto-watch --browsers Chrome --no-single-run karma.conf.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -27,24 +26,13 @@
   },
   "homepage": "https://github.com/jsdir/react-ladda",
   "devDependencies": {
-    "browserify": "~6.3.3",
-    "browserify-istanbul": "^0.1.2",
-    "chai": "~1.10.0",
-    "es5-shim": "~4.0.5",
-    "karma": "~0.12.28",
-    "karma-browserify": "~1.0.0",
-    "karma-chrome-launcher": "~0.1.6",
-    "karma-coverage": "0.2.6",
-    "karma-mocha": "~0.1.9",
-    "karma-phantomjs-launcher": "~0.1.4",
-    "karma-sinon-chai": "~0.2.0",
-    "karma-spec-reporter": "0.0.13",
-    "react": "0.12.x",
-    "sinon": "~1.12.1",
-    "sinon-chai": "~2.6.0",
-    "watchify": "~2.1.1"
+    "jest-cli": "^0.2.1",
+    "react": "0.12.x"
   },
   "dependencies": {
     "ladda": "^0.9.4"
+  },
+  "jest": {
+    "unmockedModulePathPatterns": ["react"]
   }
 }
