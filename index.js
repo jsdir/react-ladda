@@ -51,7 +51,7 @@ var LaddaButton = React.createClass({
   },
 
   render: function() {
-    var props = {className: 'ladda-button', onClick: this.props.onClick};
+    var props = {className: 'ladda-button'};
     var laddaOptions = {
       style: 'data-style',
       color: 'data-color',
