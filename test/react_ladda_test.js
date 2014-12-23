@@ -54,5 +54,25 @@ describe('LaddaButton', function() {
     attributes['data-spinner-color'].value.should.equal('#ddd');
   });
 
+  it('should not trigger "onClick" event', function() {
+    var onClick = sinon.spy();
+    var button = createButton({onClick: onClick});
+    var node = TestUtils.renderIntoDocument(button);
+    TestUtils.Simulate.click(node);
+    onClick.should.not.have.been.called;
+  });
+
+  describe('child element', function() {
+
+    it('should trigger "onClick" event', function() {
+      var onClick = sinon.spy();
+      var laddaButton = LaddaButton({}, React.DOM.button({onClick: onClick}));
+      var button = TestUtils.renderIntoDocument(laddaButton);
+      var node = TestUtils.findRenderedDOMComponentWithTag(button, 'button');
+      TestUtils.Simulate.click(node);
+      onClick.should.have.been.called;
+    });
+  });
+
   // TODO: it('should remove ladda button instance on unmount', function() {});
 });
