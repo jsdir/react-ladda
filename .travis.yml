@@ -14,6 +14,7 @@ node_js:
 # after_script:
 #   - cat ./coverage/lcov/lcov.info | codeclimate
 #
-# notifications:
-#   flowdock:
-#     secure: "Z/waFO5hoI9V9C+uJejEGZ3yJ28F7Hzbl5wHDF4hNI1i7szoKsw0jETaAaFnsPgk/9wFTzscp9/XXgqbGB6uxZrBkGtiFf2wBYYAx1gZcBoNBoqXiSlTTQg73RZcyVQsvUE7Ttlm1Vsmo6ukqqB1xcAJ1YP/rDRmhLbVcs78TK4="
+
+notifications:
+  flowdock:
+    secure: "Z/waFO5hoI9V9C+uJejEGZ3yJ28F7Hzbl5wHDF4hNI1i7szoKsw0jETaAaFnsPgk/9wFTzscp9/XXgqbGB6uxZrBkGtiFf2wBYYAx1gZcBoNBoqXiSlTTQg73RZcyVQsvUE7Ttlm1Vsmo6ukqqB1xcAJ1YP/rDRmhLbVcs78TK4="
