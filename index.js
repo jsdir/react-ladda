@@ -1,10 +1,11 @@
 var React = require('react');
-var shallowEqual = require('react/lib/shallowEqual');
 var cloneWithProps = require('react/lib/cloneWithProps');
+var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 var Ladda = require('ladda/dist/ladda.min');
 
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
+  mixins: [PureRenderMixin],
 
   propTypes: {
     active: React.PropTypes.bool,
@@ -14,7 +15,7 @@ var LaddaButton = React.createClass({
     size: React.PropTypes.string,
     spinnerSize: React.PropTypes.number,
     spinnerColor: React.PropTypes.string,
-    children: React.PropTypes.node.isRequired
+    children: React.PropTypes.renderable.isRequired
   },
 
   getDefaultProps: function() {
@@ -31,11 +32,11 @@ var LaddaButton = React.createClass({
     }
   },
 
-  shouldComponentUpdate: function(nextProps, nextState) {
-    return !shallowEqual(this.props, nextProps);
-  },
-
   componentDidUpdate: function() {
+    if (!this.laddaButton) {
+      return;
+    }
+
     if (this.props.active) {
       if (!this.active) {
         this.active = true;
