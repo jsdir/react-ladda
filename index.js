@@ -1,7 +1,6 @@
 var React = require('react');
 var cloneWithProps = require('react/lib/cloneWithProps');
 var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
-var Ladda = require('ladda/dist/ladda.min');
 
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
@@ -23,7 +22,7 @@ var LaddaButton = React.createClass({
   },
 
   componentDidMount: function() {
-    this.laddaButton = Ladda.create(this.getDOMNode());
+    this.laddaButton = require('ladda/dist/ladda.min').create(this.getDOMNode());
   },
 
   componentWillUnmount: function() {
