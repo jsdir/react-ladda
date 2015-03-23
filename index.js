@@ -1,5 +1,4 @@
 var React = require('react');
-var cloneWithProps = require('react/lib/cloneWithProps');
 var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
 var LaddaButton = React.createClass({
@@ -14,7 +13,7 @@ var LaddaButton = React.createClass({
     size: React.PropTypes.string,
     spinnerSize: React.PropTypes.number,
     spinnerColor: React.PropTypes.string,
-    children: React.PropTypes.renderable.isRequired
+    children: React.PropTypes.node.isRequired
   },
 
   getDefaultProps: function() {
@@ -67,7 +66,7 @@ var LaddaButton = React.createClass({
       }
     }
 
-    return cloneWithProps(this.props.children, props);
+    return React.addons.cloneWithProps(this.props.children, props);
   }
 });
 
