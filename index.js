@@ -66,7 +66,7 @@ var LaddaButton = React.createClass({
       }
     }
 
-    return this.props.children(Object.assign({}, props));
+    return React.addons.cloneWithProps(this.props.children, props);
   }
 });
 
