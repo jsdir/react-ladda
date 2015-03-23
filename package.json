@@ -4,7 +4,7 @@
   "description": "React wrapper for Ladda buttons.",
   "main": "index.js",
   "peerDependencies": {
-    "react": ">=0.12"
+    "react": "0.13.x"
   },
   "scripts": {
     "test": "jest"
