@@ -14,7 +14,7 @@ var LaddaButton = React.createClass({
     size: React.PropTypes.string,
     spinnerSize: React.PropTypes.number,
     spinnerColor: React.PropTypes.string,
-    children: React.PropTypes.renderable.isRequired
+    children: React.PropTypes.node.isRequired
   },
 
   getDefaultProps: function() {
