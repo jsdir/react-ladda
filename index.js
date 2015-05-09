@@ -1,9 +1,8 @@
-var React = require('react');
-var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
+var React = require('react/addons');
 
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
-  mixins: [PureRenderMixin],
+  mixins: [React.addons.PureRenderMixin],
 
   propTypes: {
     active: React.PropTypes.bool,
