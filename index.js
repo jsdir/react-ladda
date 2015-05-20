@@ -20,7 +20,7 @@ var LaddaButton = React.createClass({
   },
 
   componentDidMount: function() {
-    this.laddaButton = require('ladda/dist/ladda.min').create(this.getDOMNode());
+    this.laddaButton = require('ladda/dist/ladda.min').create(React.findDOMNode(this));
   },
 
   componentWillUnmount: function() {
