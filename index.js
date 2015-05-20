@@ -34,6 +34,11 @@ var LaddaButton = React.createClass({
       return;
     }
 
+    // skip if the button was initially disabled
+    if (!this.props.active && this.props.children.props.disabled) {
+      return;
+    }
+
     if (this.props.active) {
       if (!this.active) {
         this.active = true;
