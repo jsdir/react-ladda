@@ -58,4 +58,14 @@ describe('LaddaButton', function() {
       expect(onClick.mock.calls.length).toBe(1);
     });
   });
+
+  it('should work after multiple React.render invocations', function() {
+    var buttonContainer = React.DOM.div(null, LaddaButton(null, React.DOM.button()));
+    var div = document.createElement('div');
+    React.render(buttonContainer, div);
+    React.render(buttonContainer, div);
+    jest.runAllTimers();
+    expect(div.innerHTML).toMatch(/ladda-label/);
+    expect(div.innerHTML).toMatch(/ladda-spinner/);
+  });
 });
