@@ -28,7 +28,7 @@ Usage
 
 `LaddaButton` is a React component that wraps [Ladda buttons](https://github.com/hakimel/Ladda) with additional props for the built-in loading indicators:
 
-```js
+```jsx
 React = require('react');
 LaddaButton = require('react-ladda');
 
@@ -36,16 +36,16 @@ App = React.createClass({
   displayName: 'App',
 
   getInitialState: function() {
-    return {active: false};
+    return {loading: false};
   },
 
   toggle: function() {
-    this.setState({active: !this.state.active});
+    this.setState({loading: !this.state.loading});
   },
 
   render: function() {
     return (
-      <LaddaButton active={this.state.active} progress={.5} onClick={this.toggle}>
+      <LaddaButton loading={this.state.loading} progress={.5} onClick={this.toggle}>
         Click here
       </LaddaButton>
     );
@@ -57,9 +57,9 @@ React.render(<App />, document.body);
 
 All of the Ladda button options are supported through props:
 
-```js
+```jsx
 <LaddaButton
-    active={true}
+    loading={true}
     progress={0.5}
     buttonColor="#eee"
     buttonSize="xl"

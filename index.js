@@ -13,7 +13,7 @@ var LaddaButton = React.createClass({
   mixins: [React.addons.PureRenderMixin],
 
   propTypes: {
-    active: React.PropTypes.bool,
+    loading: React.PropTypes.bool,
     progress: React.PropTypes.number,
     buttonStyle: React.PropTypes.string,
     buttonColor: React.PropTypes.string,
@@ -24,8 +24,7 @@ var LaddaButton = React.createClass({
 
   getDefaultProps: function() {
     return {
-      active: false,
-      progress: 0,
+      loading: false,
       buttonStyle: 'expand-left'
     };
   },
@@ -48,7 +47,7 @@ var LaddaButton = React.createClass({
 
     // TODO: Skip if the button was initially disabled.
 
-    if (this.props.active) {
+    if (this.props.loading) {
       this.laddaButton.start();
     } else {
       this.laddaButton.stop();

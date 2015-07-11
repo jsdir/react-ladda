@@ -23,7 +23,7 @@ describe('LaddaButton', function() {
 
   it('should create a ladda button with correct attributes', function() {
     var button = createRenderedButton({
-      active: true,
+      loading: true,
       progress: 0.5,
       buttonColor: '#eee',
       buttonSize: 'xl',
