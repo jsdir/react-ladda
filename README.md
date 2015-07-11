@@ -26,11 +26,9 @@ Compatibility
 Usage
 -----
 
-`LaddaButton` is a component that can be wrapped around a button DOM element:
+`LaddaButton` is a React component that wraps [Ladda buttons](https://github.com/hakimel/Ladda) with additional props for the built-in loading indicators:
 
 ```js
-/** @jsx React.DOM */
-
 React = require('react');
 LaddaButton = require('react-ladda');
 
@@ -47,8 +45,8 @@ App = React.createClass({
 
   render: function() {
     return (
-      <LaddaButton active={this.state.active}>
-        <button onClick={this.toggle}>Click here</button>
+      <LaddaButton active={this.state.active} progress={.5} onClick={this.toggle}>
+        Click here
       </LaddaButton>
     );
   }
@@ -57,17 +55,15 @@ App = React.createClass({
 React.render(<App />, document.body);
 ```
 
-All of the options for ladda buttons are supported:
+All of the Ladda button options are supported through props:
 
 ```js
 <LaddaButton
     active={true}
     progress={0.5}
-    color="#eee"
-    size="xl"
+    buttonColor="#eee"
+    buttonSize="xl"
+    buttonStyle="slide-up"
     spinnerSize={30}
-    spinnerColor="#ddd"
-    style="slide-up">
-  <button>Click here</button>
-</LaddaButton>
+    spinnerColor="#ddd">Click here</LaddaButton>
 ```
