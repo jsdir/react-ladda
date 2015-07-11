@@ -30,7 +30,7 @@
     "react": "0.13.x"
   },
   "dependencies": {
-    "ladda": "^0.9.4"
+    "ladda": "^0.9.8"
   },
   "jest": {
     "unmockedModulePathPatterns": ["react"]
