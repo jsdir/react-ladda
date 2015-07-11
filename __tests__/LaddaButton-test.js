@@ -40,23 +40,20 @@ describe('LaddaButton', function() {
     expect(node.getAttribute('data-spinner-color')).toBe('#ddd');
   });
 
-  it('should not trigger "onClick" event', function() {
+  it('should trigger "onClick" event', function() {
     var onClick = jest.genMockFunction();
     var button = createRenderedButton({onClick: onClick});
-    TestUtils.Simulate.click(button);
-    expect(onClick.mock.calls.length).toBe(0);
+    TestUtils.Simulate.click(button.getDOMNode());
+    expect(onClick.mock.calls.length).toBe(1);
   });
 
-  describe('child element', function() {
-
-    it('should trigger "onClick" event', function() {
-      var onClick = jest.genMockFunction();
-      var laddaButton = LaddaButton({onClick: onClick});
-      var button = TestUtils.renderIntoDocument(laddaButton);
-      var node = TestUtils.findRenderedDOMComponentWithTag(button, 'button');
-      TestUtils.Simulate.click(node);
-      expect(onClick.mock.calls.length).toBe(1);
-    });
+  it('should inherit className from props', function() {
+    var el = LaddaButton({
+      className: 'buttonClass'
+    }, 'Click here');
+    var node = TestUtils.renderIntoDocument(el);
+    var className = node.getDOMNode().getAttribute('class');
+    expect(className).toBe('ladda-button buttonClass');
   });
 
   it('should work after multiple React.render invocations', function() {
