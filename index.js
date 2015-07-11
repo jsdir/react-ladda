@@ -1,5 +1,13 @@
 var React = require('react/addons');
 
+var laddaOptions = {
+  buttonStyle: 'data-style',
+  buttonColor: 'data-color',
+  buttonSize: 'data-size',
+  spinnerSize: 'data-spinner-size',
+  spinnerColor: 'data-spinner-color'
+};
+
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
   mixins: [React.addons.PureRenderMixin],
@@ -7,20 +15,24 @@ var LaddaButton = React.createClass({
   propTypes: {
     active: React.PropTypes.bool,
     progress: React.PropTypes.number,
-    style: React.PropTypes.string,
-    color: React.PropTypes.string,
-    size: React.PropTypes.string,
+    buttonStyle: React.PropTypes.string,
+    buttonColor: React.PropTypes.string,
+    buttonSize: React.PropTypes.string,
     spinnerSize: React.PropTypes.number,
-    spinnerColor: React.PropTypes.string,
-    children: React.PropTypes.node.isRequired
+    spinnerColor: React.PropTypes.string
   },
 
   getDefaultProps: function() {
-    return { style: 'expand-left' };
+    return {
+      active: false,
+      progress: 0,
+      buttonStyle: 'expand-left'
+    };
   },
 
   componentDidMount: function() {
-    this.laddaButton = require('ladda/dist/ladda.min').create(React.findDOMNode(this));
+    this.laddaButton = require('ladda/dist/ladda.min')
+      .create(React.findDOMNode(this));
   },
 
   componentWillUnmount: function() {
@@ -34,10 +46,12 @@ var LaddaButton = React.createClass({
       return;
     }
 
-    // skip if the button was initially disabled
+    // Skip if the button was initially disabled.
+    /* TODO: wat
     if (!this.props.active && this.props.children.props.disabled) {
       return;
     }
+    */
 
     if (this.props.active) {
       if (!this.active) {
@@ -48,29 +62,25 @@ var LaddaButton = React.createClass({
       this.active = false;
       this.laddaButton.stop();
     }
+
     if (this.props.progress) {
       this.laddaButton.setProgress(this.props.progress);
     }
   },
 
   render: function() {
-    var props = {className: 'ladda-button'};
-    var laddaOptions = {
-      style: 'data-style',
-      color: 'data-color',
-      size: 'data-size',
-      spinnerSize: 'data-spinner-size',
-      spinnerColor: 'data-spinner-color'
-    };
-
-    for (var prop in laddaOptions) {
-      var dataAttr = laddaOptions[prop];
-      if (this.props[prop]) {
-        props[dataAttr] = this.props[prop];
-      }
+    var props = {};
+    for (var prop in this.props) {
+      props[laddaOptions[prop] || prop] = this.props[prop];
     }
 
-    return React.addons.cloneWithProps(this.props.children, props);
+    // Add the ladda-button class to the button.
+    props.className = 'ladda-button ' + (props.className || '');
+
+    return React.DOM.button(props,
+      React.DOM.span({className: 'ladda-label'}, this.props.children),
+      React.DOM.span({className: 'ladda-spinner'})
+    );
   }
 });
 

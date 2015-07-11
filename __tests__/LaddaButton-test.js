@@ -11,7 +11,7 @@ Ladda.create = jest.genMockFunction();
 describe('LaddaButton', function() {
 
   function createRenderedButton(props) {
-    var el = LaddaButton(props, React.DOM.button(null, 'Click here'));
+    var el = LaddaButton(props, 'Click here');
     return TestUtils.renderIntoDocument(el);
   }
 
@@ -25,11 +25,11 @@ describe('LaddaButton', function() {
     var button = createRenderedButton({
       active: true,
       progress: 0.5,
-      color: '#eee',
-      size: 'xl',
+      buttonColor: '#eee',
+      buttonSize: 'xl',
       spinnerSize: 30,
       spinnerColor: '#ddd',
-      style: 'slide-up'
+      buttonStyle: 'slide-up'
     });
 
     var node = button.getDOMNode();
@@ -51,7 +51,7 @@ describe('LaddaButton', function() {
 
     it('should trigger "onClick" event', function() {
       var onClick = jest.genMockFunction();
-      var laddaButton = LaddaButton({}, React.DOM.button({onClick: onClick}));
+      var laddaButton = LaddaButton({onClick: onClick});
       var button = TestUtils.renderIntoDocument(laddaButton);
       var node = TestUtils.findRenderedDOMComponentWithTag(button, 'button');
       TestUtils.Simulate.click(node);
@@ -60,7 +60,7 @@ describe('LaddaButton', function() {
   });
 
   it('should work after multiple React.render invocations', function() {
-    var buttonContainer = React.DOM.div(null, LaddaButton(null, React.DOM.button()));
+    var buttonContainer = React.DOM.div(null, LaddaButton());
     var div = document.createElement('div');
     React.render(buttonContainer, div);
     React.render(buttonContainer, div);
