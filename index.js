@@ -46,24 +46,15 @@ var LaddaButton = React.createClass({
       return;
     }
 
-    // Skip if the button was initially disabled.
-    /* TODO: wat
-    if (!this.props.active && this.props.children.props.disabled) {
-      return;
-    }
-    */
+    // TODO: Skip if the button was initially disabled.
 
     if (this.props.active) {
-      if (!this.active) {
-        this.active = true;
-        this.laddaButton.start();
-      }
+      this.laddaButton.start();
     } else {
-      this.active = false;
       this.laddaButton.stop();
     }
 
-    if (this.props.progress) {
+    if (typeof this.props.progress !== 'undefined') {
       this.laddaButton.setProgress(this.props.progress);
     }
   },
