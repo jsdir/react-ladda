@@ -50,9 +50,9 @@ var LaddaButton = React.createClass({
       return;
     }
 
-    if (this.props.loading) {
+    if (this.props.loading && !this.laddaButton.isLoading()) {
       this.laddaButton.start();
-    } else {
+    } else if (!this.props.loading && this.laddaButton.isLoading()){
       this.laddaButton.stop();
     }
 
