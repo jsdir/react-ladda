@@ -20,8 +20,11 @@ $ npm install --save react-ladda
 Compatibility
 -------------
 
-- Use `react-ladda@>=2.0.2` for `react@0.13`
-- Use `react-ladda@<2.0.2` for `react@0.12`
+`react-ladda` version | `react` version
+--------------------- | ---------------
+`>=4.0.0`             | `0.14.x`
+`>=2.0.2 <4.0.0`      | `0.13.x`
+`< 2.0.2`             | `0.12.x`
 
 Usage
 -----
