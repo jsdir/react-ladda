@@ -30,6 +30,7 @@ Usage
 
 ```jsx
 React = require('react');
+ReactDOM = require('react-dom');
 LaddaButton = require('react-ladda');
 
 App = React.createClass({
@@ -52,7 +53,7 @@ App = React.createClass({
   }
 });
 
-React.render(<App />, document.body);
+ReactDOM.render(<App />, document.body);
 ```
 
 All of the Ladda button options are supported through props:

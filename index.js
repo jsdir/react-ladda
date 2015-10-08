@@ -1,4 +1,6 @@
-var React = require('react/addons');
+var React = require('react');
+var findDOMNode = require('react-dom').findDOMNode;
+var PureRenderMixin = require('react-addons-pure-render-mixin');
 
 var laddaOptions = {
   buttonStyle: 'data-style',
@@ -10,7 +12,8 @@ var laddaOptions = {
 
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
-  mixins: [React.addons.PureRenderMixin],
+  
+  mixins: [PureRenderMixin],
 
   propTypes: {
     loading: React.PropTypes.bool,
@@ -31,7 +34,7 @@ var LaddaButton = React.createClass({
 
   componentDidMount: function() {
     this.laddaButton = require('ladda/dist/ladda.min')
-      .create(React.findDOMNode(this));
+      .create(findDOMNode(this));
   },
 
   componentWillUnmount: function() {

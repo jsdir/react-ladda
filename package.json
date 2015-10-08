@@ -4,7 +4,8 @@
   "description": "React wrapper for Ladda buttons.",
   "main": "index.js",
   "peerDependencies": {
-    "react": "0.13.x"
+    "react": ">=0.14.0",
+    "react-dom": ">=0.14.0"
   },
   "scripts": {
     "test": "jest"
@@ -27,12 +28,20 @@
   "homepage": "https://github.com/jsdir/react-ladda",
   "devDependencies": {
     "jest-cli": "^0.2.1",
-    "react": "0.13.x"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-addons-test-utils": "^0.14.0"
   },
   "dependencies": {
-    "ladda": "^0.9.8"
+    "ladda": "^0.9.8",
+    "react-addons-pure-render-mixin": "^0.14.0"
   },
   "jest": {
-    "unmockedModulePathPatterns": ["react"]
+    "unmockedModulePathPatterns": [
+      "react",
+      "react-dom",
+      "react-addons-pure-render-mixin",
+      "react-addons-test-utils"
+    ]
   }
 }
