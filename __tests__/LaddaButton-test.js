@@ -1,15 +1,15 @@
 jest.dontMock('..');
 
-var React = require('react/addons');
+var React = require('react');
+var ReactDOM = require('react-dom');
 var Ladda = require('ladda/dist/ladda.min');
 
 var LaddaButton = React.createFactory(require('..'));
 
-var TestUtils = React.addons.TestUtils;
+var TestUtils = require('react-addons-test-utils');
 Ladda.create = jest.genMockFunction();
 
 describe('LaddaButton', function() {
-
   function createRenderedButton(props) {
     var el = LaddaButton(props, 'Click here');
     return TestUtils.renderIntoDocument(el);
@@ -17,7 +17,7 @@ describe('LaddaButton', function() {
 
   it('should default to style "expand-left"', function() {
     var button = createRenderedButton({});
-    var node = button.getDOMNode();
+    var node = ReactDOM.findDOMNode(button);
     expect(node.getAttribute('data-style')).toBe('expand-left');
   });
 
@@ -32,7 +32,7 @@ describe('LaddaButton', function() {
       buttonStyle: 'slide-up'
     });
 
-    var node = button.getDOMNode();
+    var node = ReactDOM.findDOMNode(button);
     expect(node.getAttribute('data-color')).toBe('#eee');
     expect(node.getAttribute('data-size')).toBe('xl');
     expect(node.getAttribute('data-style')).toBe('slide-up');
@@ -43,7 +43,7 @@ describe('LaddaButton', function() {
   it('should trigger "onClick" event', function() {
     var onClick = jest.genMockFunction();
     var button = createRenderedButton({onClick: onClick});
-    TestUtils.Simulate.click(button.getDOMNode());
+    TestUtils.Simulate.click(ReactDOM.findDOMNode(button));
     expect(onClick.mock.calls.length).toBe(1);
   });
 
@@ -52,15 +52,15 @@ describe('LaddaButton', function() {
       className: 'buttonClass'
     }, 'Click here');
     var node = TestUtils.renderIntoDocument(el);
-    var className = node.getDOMNode().getAttribute('class');
+    var className = ReactDOM.findDOMNode(node).getAttribute('class');
     expect(className).toBe('ladda-button buttonClass');
   });
 
-  it('should work after multiple React.render invocations', function() {
+  it('should work after multiple ReactDOM.render invocations', function() {
     var buttonContainer = React.DOM.div(null, LaddaButton());
     var div = document.createElement('div');
-    React.render(buttonContainer, div);
-    React.render(buttonContainer, div);
+    ReactDOM.render(buttonContainer, div);
+    ReactDOM.render(buttonContainer, div);
     jest.runAllTimers();
     expect(div.innerHTML).toMatch(/ladda-label/);
     expect(div.innerHTML).toMatch(/ladda-spinner/);
