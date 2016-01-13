@@ -43,14 +43,18 @@ var LaddaButton = React.createClass({
     }
   },
 
-  componentDidUpdate: function() {
+  componentDidUpdate: function(prevProps) {
     if (!this.laddaButton) {
       return;
     }
 
-    // Skip if the button was initially disabled.
-    if (!this.props.loading && this.props.disabled) {
+    // Skip if all props are the same
+    if(prevProps.loading === this.props.loading && prevProps.disabled === this.props.disabled) {
       return;
+    }
+
+    if (!prevProps.disabled && this.props.disabled) {
+      this.laddaButton.disable();
     }
 
     if (this.props.loading && !this.laddaButton.isLoading()) {
