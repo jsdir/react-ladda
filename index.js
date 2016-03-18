@@ -53,7 +53,8 @@ var LaddaButton = React.createClass({
       return;
     }
 
-    if (!prevProps.disabled && this.props.disabled) {
+    if (!this.props.loading && this.props.disabled) {
+      this.laddaButton.stop();
       this.laddaButton.disable();
     }
 
