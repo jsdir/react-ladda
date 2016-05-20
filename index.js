@@ -12,7 +12,7 @@ var laddaOptions = {
 
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
-  
+
   mixins: [PureRenderMixin],
 
   propTypes: {
@@ -43,29 +43,24 @@ var LaddaButton = React.createClass({
     }
   },
 
-  componentDidUpdate: function(prevProps) {
+  componentWillReceiveProps: function(nextProps) {
     if (!this.laddaButton) {
       return;
     }
 
-    // Skip if all props are the same
-    if(prevProps.loading === this.props.loading && prevProps.disabled === this.props.disabled) {
-      return;
-    }
-
-    if (!this.props.loading && this.props.disabled) {
+    if (!nextProps.loading && nextProps.disabled) {
       this.laddaButton.stop();
       this.laddaButton.disable();
     }
 
-    if (this.props.loading && !this.laddaButton.isLoading()) {
+    if (nextProps.loading && !this.laddaButton.isLoading()) {
       this.laddaButton.start();
-    } else if (!this.props.loading && this.laddaButton.isLoading()){
+    } else if (!nextProps.loading && this.laddaButton.isLoading()){
       this.laddaButton.stop();
     }
 
-    if (typeof this.props.progress !== 'undefined') {
-      this.laddaButton.setProgress(this.props.progress);
+    if (typeof nextProps.progress !== 'undefined') {
+      this.laddaButton.setProgress(nextProps.progress);
     }
   },
 
