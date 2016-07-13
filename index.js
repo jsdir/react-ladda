@@ -10,6 +10,8 @@ var laddaOptions = {
   spinnerColor: 'data-spinner-color'
 };
 
+var buttonPropsBlackList = ['loading'];
+
 var LaddaButton = React.createClass({
   displayName: 'LaddaButton',
 
@@ -67,6 +69,8 @@ var LaddaButton = React.createClass({
   render: function() {
     var props = {};
     for (var prop in this.props) {
+      if (buttonPropsBlackList.indexOf(prop) === 0) continue;
+
       props[laddaOptions[prop] || prop] = this.props[prop];
     }
 
