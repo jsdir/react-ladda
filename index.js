@@ -37,6 +37,14 @@ var LaddaButton = React.createClass({
   componentDidMount: function() {
     this.laddaButton = require('ladda/dist/ladda.min')
       .create(findDOMNode(this));
+
+    if (this.props.loading) {
+      this.laddaButton.start();
+    }
+
+    if (typeof this.props.progress !== 'undefined') {
+      this.laddaButton.setProgress(this.props.progress);
+    }
   },
 
   componentWillUnmount: function() {
