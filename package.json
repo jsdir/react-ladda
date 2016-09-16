@@ -1,0 +1,24 @@
+{
+  "name": "react-component-boilerplate",
+  "version": "1.0.0",
+  "description": "a simple boilerplate for react components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsdir/react-component-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "boilerplate"
+  ],
+  "author": "Jason Sommer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsdir/react-component-boilerplate/issues"
+  },
+  "homepage": "https://github.com/jsdir/react-component-boilerplate#readme"
+}
