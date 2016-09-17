@@ -48,12 +48,12 @@ class LaddaButton extends Component {
   componentDidMount() {
     this.laddaInstance = Ladda.create(this.node)
 
-    if (!isUndefined(this.props.progress)) {
-      this.laddaInstance.setProgress(this.props.progress)
-    }
-
     if (this.props.loading) {
       this.laddaInstance.start()
+    }
+
+    if (!isUndefined(this.props.progress)) {
+      this.laddaInstance.setProgress(this.props.progress)
     }
   }
 
@@ -70,16 +70,16 @@ class LaddaButton extends Component {
   }
 
   updateLaddaInstance = (props) => {
-    if (props.progress !== this.props.progress) {
-      this.laddaInstance.setProgress(props.progress)
-    }
-
     if (props.loading !== this.props.loading) {
       if (props.loading) {
         this.laddaInstance.start()
       } else {
         this.laddaInstance.stop()
       }
+    }
+
+    if (props.progress !== this.props.progress) {
+      this.laddaInstance.setProgress(props.progress)
     }
   }
 

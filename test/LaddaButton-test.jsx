@@ -40,7 +40,7 @@ describe('LaddaButton', () => {
     expect(wrapper).to.have.attr('data-spinner-lines').equal('12')
   })
 
-  it('should not pass a blacklisted props to the Ladda button', () => {
+  it('should not pass blacklisted props to the Ladda button', () => {
     const wrapper = mount(
       <LaddaButton
         loading
@@ -66,6 +66,18 @@ describe('LaddaButton', () => {
     const handler = () => {}
     const wrapper = mount(<LaddaButton onClick={handler} />)
     expect(wrapper.find('button')).prop('onClick').to.eq(handler)
+  })
+
+  it('should allow `loading` and `progress` to be changed in the same state update', () => {
+    const wrapper = mount(<LaddaButton />)
+
+    // Ladda depends on a set `offsetWidth` for calculations.
+    const node = findDOMNode(wrapper.instance())
+    node.offsetWidth = 200
+
+    expect(wrapper.html()).not.to.contain('ladda-progress')
+    wrapper.setProps({ loading: true, progress: 0.4 })
+    expect(wrapper.html()).to.contain('ladda-progress')
   })
 
   describe('ladda instance', () => {
