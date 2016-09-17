@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import Ladda from 'ladda'
 
+import { SIZES, STYLES } from './constants'
+
 const isUndefined = value => typeof value === 'undefined'
 
 const OMITTED_PROPS = [
@@ -27,6 +29,14 @@ class LaddaButton extends Component {
     className: PropTypes.string,
     progress: PropTypes.number,
     loading: PropTypes.bool,
+
+    // Ladda props
+    'data-color': PropTypes.string,
+    'data-size': PropTypes.anyOf(SIZES),
+    'data-style': PropTypes.anyOf(STYLES),
+    'data-spinner-size': PropTypes.number,
+    'data-spinner-color': PropTypes.string,
+    'data-spinner-lines': PropTypes.number,
   };
 
   componentDidMount() {

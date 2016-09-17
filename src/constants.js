@@ -3,6 +3,13 @@ export const S = 's'
 export const L = 'l'
 export const XL = 'xl'
 
+export const SIZES = [
+  XS,
+  S,
+  L,
+  XL,
+]
+
 export const EXPAND_LEFT = 'expand-left'
 export const EXPAND_RIGHT = 'expand-right'
 export const EXPAND_UP = 'expand-up'
@@ -15,3 +22,18 @@ export const SLIDE_LEFT = 'slide-left'
 export const SLIDE_RIGHT = 'slide-right'
 export const SLIDE_UP = 'slide-up'
 export const SLIDE_DOWN = 'slide-down'
+
+export const STYLES = [
+  EXPAND_LEFT,
+  EXPAND_RIGHT,
+  EXPAND_UP,
+  EXPAND_DOWN,
+  CONTRACT,
+  CONTRACT_OVERLAY,
+  ZOOM_IN,
+  ZOOM_OUT,
+  SLIDE_LEFT,
+  SLIDE_RIGHT,
+  SLIDE_UP,
+  SLIDE_DOWN,
+]
