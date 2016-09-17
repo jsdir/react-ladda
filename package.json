@@ -4,7 +4,8 @@
   "description": "a simple boilerplate for react components",
   "main": "dist/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha test/.setup.js test/**/*-test.js",
+    "watch": "./node_modules/.bin/mocha -w --watch-extensions=jsx test/.setup.js test/**/*-test.jsx",
+    "test": "./node_modules/.bin/mocha test/.setup.js test/**/*-test.jsx",
     "lint": "./node_modules/.bin/eslint src/**/*",
     "build": "npm run lint && ./node_modules/.bin/babel src --out-dir dist",
     "prepublish": "npm run build"
@@ -34,6 +35,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "babel-register": "^6.4.3",
     "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.1",
     "enzyme": "^2.0.0",
     "eslint": "^3.5.0",
     "eslint-config-airbnb": "^11.1.0",

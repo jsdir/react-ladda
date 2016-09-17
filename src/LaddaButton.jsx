@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 
-const LaddaButton = () => (
-  <div>Hello world!</div>
+const LaddaButton = props => (
+  <button className="ladda-button">
+    <span className="ladda-label">
+      {props.children}
+    </span>
+  </button>
 )
+
+LaddaButton.propTypes = {
+  children: PropTypes.node,
+}
 
 export default LaddaButton
