@@ -1,6 +1,9 @@
 import React from 'react'
+import { findDOMNode } from 'react-dom'
 import { expect } from 'chai'
-import { render } from 'enzyme'
+import { render, mount } from 'enzyme'
+import sinon from 'sinon'
+import Ladda from 'ladda'
 
 import LaddaButton from '../src/LaddaButton'
 import { XL, SLIDE_UP } from '../src/constants'
@@ -56,4 +59,31 @@ describe('LaddaButton', () => {
       wrapper.find('button.ladda-button.custom')
     ).to.be.present()
   })
+
+  describe('ladda instance', () => {
+    let createStub
+    let laddaInstance
+
+    beforeEach(() => {
+      createStub = sinon.stub(Ladda, 'create')
+      laddaInstance = {
+        remove: sinon.spy(),
+      }
+      createStub.returns(laddaInstance)
+    })
+
+    afterEach(() => {
+      createStub.restore()
+    })
+
+    it('should be maintained for the entire lifecycle of the component', () => {
+      const wrapper = mount(<LaddaButton />)
+      const node = findDOMNode(wrapper.instance())
+      expect(createStub).to.have.been.calledWithExactly(node)
+      wrapper.unmount()
+      expect(laddaInstance.remove).to.have.been.calledWithExactly()
+    })
+  })
 })
+// progress calls setProgress
+// loading calls start and stop

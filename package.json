@@ -1,7 +1,7 @@
 {
-  "name": "react-component-boilerplate",
-  "version": "1.0.0",
-  "description": "a simple boilerplate for react components",
+  "name": "react-ladda",
+  "version": "5.0.0",
+  "description": "React wrapper for Ladda buttons",
   "main": "dist/index.js",
   "scripts": {
     "watch": "./node_modules/.bin/mocha -w --watch-extensions=jsx test/.setup.js test/**/*-test.jsx",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsdir/react-component-boilerplate.git"
+    "url": "git+https://github.com/jsdir/react-ladda.git"
   },
   "keywords": [
     "react",
@@ -22,9 +22,9 @@
   "author": "Jason Sommer",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsdir/react-component-boilerplate/issues"
+    "url": "https://github.com/jsdir/react-ladda/issues"
   },
-  "homepage": "https://github.com/jsdir/react-component-boilerplate#readme",
+  "homepage": "https://github.com/jsdir/react-ladda#readme",
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-eslint": "^6.1.2",
@@ -44,10 +44,13 @@
     "eslint-plugin-react": "^6.2.2",
     "jsdom": "^8.0.1",
     "mocha": "^2.4.5",
-    "react-addons-test-utils": "^15.3.1"
+    "react-addons-test-utils": "^15.3.1",
+    "sinon": "^1.17.5",
+    "sinon-chai": "^2.8.0"
   },
   "peerDependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "ladda": "^1.0.0"
   }
 }

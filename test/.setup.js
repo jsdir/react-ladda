@@ -1,10 +1,6 @@
 require('babel-register')();
 
 var jsdom = require('jsdom').jsdom;
-var chai = require('chai');
-
-var chaiEnzyme = require('chai-enzyme');
-chai.use(chaiEnzyme());
 
 var exposedProperties = ['window', 'navigator', 'document'];
 
@@ -22,3 +18,7 @@ global.navigator = {
 };
 
 documentRef = document;
+
+var chai = require('chai');
+chai.use(require('chai-enzyme')());
+chai.use(require('sinon-chai'));

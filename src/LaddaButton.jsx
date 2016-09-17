@@ -1,19 +1,34 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
+import { findDOMNode } from 'react-dom'
+import Ladda from 'ladda'
 
-const LaddaButton = props => (
-  <button
-    {...props}
-    className={`ladda-button ${props.className || ''}`}
-  >
-    <span className="ladda-label">
-      {props.children}
-    </span>
-  </button>
-)
+class LaddaButton extends Component {
 
-LaddaButton.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
+  static propTypes = {
+    children: PropTypes.node,
+    className: PropTypes.string,
+  };
+
+  componentDidMount() {
+    this.laddaInstance = Ladda.create(findDOMNode(this))
+  }
+
+  componentWillUnmount() {
+    this.laddaInstance.remove()
+  }
+
+  render() {
+    return (
+      <button
+        {...this.props}
+        className={`ladda-button ${this.props.className || ''}`}
+      >
+        <span className="ladda-label">
+          {this.props.children}
+        </span>
+      </button>
+    )
+  }
 }
 
 export default LaddaButton
