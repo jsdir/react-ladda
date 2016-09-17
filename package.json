@@ -46,11 +46,11 @@
     "mocha": "^2.4.5",
     "react-addons-test-utils": "^15.3.1",
     "sinon": "^1.17.5",
-    "sinon-chai": "^2.8.0"
+    "sinon-chai": "^2.8.0",
+    "react-dom": "^0.14.7"
   },
   "peerDependencies": {
     "react": "^0.14.7",
-    "react-dom": "^0.14.7",
     "ladda": "^1.0.0"
   }
 }

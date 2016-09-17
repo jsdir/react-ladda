@@ -31,11 +31,17 @@ class LaddaButton extends Component {
     loading: PropTypes.bool,
 
     // Ladda props
+    // eslint-disable-next-line react/no-unused-prop-types
     'data-color': PropTypes.string,
-    'data-size': PropTypes.anyOf(SIZES),
-    'data-style': PropTypes.anyOf(STYLES),
+    // eslint-disable-next-line react/no-unused-prop-types
+    'data-size': PropTypes.oneOf(SIZES),
+    // eslint-disable-next-line react/no-unused-prop-types
+    'data-style': PropTypes.oneOf(STYLES),
+    // eslint-disable-next-line react/no-unused-prop-types
     'data-spinner-size': PropTypes.number,
+    // eslint-disable-next-line react/no-unused-prop-types
     'data-spinner-color': PropTypes.string,
+    // eslint-disable-next-line react/no-unused-prop-types
     'data-spinner-lines': PropTypes.number,
   };
 
