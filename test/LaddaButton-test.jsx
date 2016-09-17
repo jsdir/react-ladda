@@ -9,7 +9,9 @@ import LaddaButton from '../src/LaddaButton'
 import { XL, SLIDE_UP } from '../src/constants'
 
 describe('LaddaButton', () => {
-  it('should render the Ladda button elements correctly', () => {
+  it('should render the elements correctly', () => {
+    // The correct markup that Ladda expects is defined here:
+    // https://github.com/hakimel/Ladda#html
     const wrapper = render(<LaddaButton>child</LaddaButton>)
     const button = wrapper.find('button.ladda-button')
     expect(button).to.be.present()
@@ -18,7 +20,7 @@ describe('LaddaButton', () => {
     expect(label).to.have.text('child')
   })
 
-  it('should pass data attributes down to the Ladda button', () => {
+  it('should pass data attributes down to the button', () => {
     const wrapper = render(
       <LaddaButton
         data-color="#eee"
@@ -60,6 +62,12 @@ describe('LaddaButton', () => {
     ).to.be.present()
   })
 
+  it('should pass props down to the button', () => {
+    const handler = () => {}
+    const wrapper = mount(<LaddaButton onClick={handler} />)
+    expect(wrapper.find('button')).prop('onClick').to.eq(handler)
+  })
+
   describe('ladda instance', () => {
     let createStub
     let laddaInstance
@@ -68,6 +76,9 @@ describe('LaddaButton', () => {
       createStub = sinon.stub(Ladda, 'create')
       laddaInstance = {
         remove: sinon.spy(),
+        setProgress: sinon.spy(),
+        start: sinon.spy(),
+        stop: sinon.spy(),
       }
       createStub.returns(laddaInstance)
     })
@@ -83,7 +94,63 @@ describe('LaddaButton', () => {
       wrapper.unmount()
       expect(laddaInstance.remove).to.have.been.calledWithExactly()
     })
+
+    it('should receive setProgress call when progress is set', () => {
+      const wrapper = mount(<LaddaButton />)
+      expect(laddaInstance.setProgress).not.to.have.been.called
+
+      wrapper.setProps({ progress: 0.5 })
+      expect(laddaInstance.setProgress).to.have.been.calledWithExactly(0.5)
+      laddaInstance.setProgress.reset()
+
+      wrapper.setProps({ progress: 0.6 })
+      expect(laddaInstance.setProgress).to.have.been.calledWithExactly(0.6)
+      laddaInstance.setProgress.reset()
+
+      wrapper.setProps({ progress: 0.6 })
+      expect(laddaInstance.setProgress).not.to.have.been.called
+    })
+
+    it('should receive start and stop calls when loading is set', () => {
+      const wrapper = mount(<LaddaButton />)
+      expect(laddaInstance.stop).not.to.have.been.called
+      expect(laddaInstance.start).not.to.have.been.called
+
+      wrapper.setProps({ loading: true })
+      expect(laddaInstance.start).to.have.been.calledWithExactly()
+      laddaInstance.start.reset()
+
+      wrapper.setProps({ loading: true })
+      expect(laddaInstance.start).not.to.have.been.called
+
+      wrapper.setProps({ loading: false })
+      expect(laddaInstance.stop).to.have.been.calledWithExactly()
+      laddaInstance.stop.reset()
+
+      wrapper.setProps({ loading: false })
+      expect(laddaInstance.stop).not.to.have.been.called
+    })
+
+    context('when `progress` is initially set', () => {
+      beforeEach(() => {
+        mount(<LaddaButton progress={0.3} />)
+      })
+
+      it('should receive a setProgress call ', () => {
+        expect(laddaInstance.setProgress).to.have.been.calledWithExactly(0.3)
+      })
+    })
+
+    context('when `loading` is initially set to a truthy value', () => {
+      beforeEach(() => {
+        mount(<LaddaButton loading />)
+      })
+
+      it('should receive a start call', () => {
+        expect(laddaInstance.start).to.have.been.calledWithExactly()
+      })
+    })
   })
+
+  // outside props get passed to the button
 })
-// progress calls setProgress
-// loading calls start and stop
