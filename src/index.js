@@ -1,2 +1,4 @@
-export { LaddaButton as default } from './LaddaButton'
+import LaddaButton from './LaddaButton'
+
+export default LaddaButton
 export * from './constants'

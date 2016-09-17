@@ -40,16 +40,16 @@ describe('LaddaButton', () => {
     expect(wrapper).to.have.attr('data-spinner-lines').equal('12')
   })
 
-  it('should not pass non-data attributes down to the Ladda button', () => {
-    const wrapper = render(
+  it('should not pass a blacklisted props to the Ladda button', () => {
+    const wrapper = mount(
       <LaddaButton
         loading
         progress={0.5}
       />
     )
-
-    expect(wrapper).to.not.have.attr('loading')
-    expect(wrapper).to.not.have.attr('progress')
+    const button = wrapper.find('button')
+    expect(button).to.not.have.prop('loading')
+    expect(button).to.not.have.prop('progress')
   })
 
   it('should combine classNames correctly', () => {
@@ -151,6 +151,4 @@ describe('LaddaButton', () => {
       })
     })
   })
-
-  // outside props get passed to the button
 })
