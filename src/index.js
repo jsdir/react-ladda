@@ -1,1 +1,2 @@
-export Component from './Component'
+export { LaddaButton as default } from './LaddaButton'
+export * from './constants'

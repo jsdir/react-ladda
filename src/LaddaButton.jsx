@@ -1,7 +1,7 @@
 import React from 'react'
 
-const MyComponent = () => (
+const LaddaButton = () => (
   <div>Hello world!</div>
 )
 
-export default MyComponent
+export default LaddaButton
