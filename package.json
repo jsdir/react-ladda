@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "./node_modules/.bin/mocha -w --watch-extensions=jsx test/.setup.js test/**/*-test.jsx",
     "test": "./node_modules/.bin/mocha test/.setup.js test/**/*-test.jsx",
-    "lint": "./node_modules/.bin/eslint src/**/*",
+    "lint": "./node_modules/.bin/eslint src/**/* test/**/*",
     "build": "npm run lint && ./node_modules/.bin/babel src --out-dir dist",
     "prepublish": "npm run build"
   },
