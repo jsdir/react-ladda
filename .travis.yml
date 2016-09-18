@@ -1,20 +1,3 @@
 language: node_js
-
 node_js:
-  - 0.10
-
-# before_script:
-#   - npm install -g codeclimate-test-reporter
-#
-# addons:
-#   code_climate:
-#     repo_token:
-#       secure: "iOPTLViia1IIZDLgeelx5OttMzyGkM5QN9v0moX886jT/e6y3V6ikITq8b7o0i8k8WMjDWlasS7bgMF16laMM+3pmVQkvS9ON4AyytLjHs6W5vdOYOO3x2Zx0tZXVyzMf/rdMFrEhdoIb7Wz7UiVAEM2cMS8apdu0lpkz/hmclY="
-#
-# after_script:
-#   - cat ./coverage/lcov/lcov.info | codeclimate
-#
-
-notifications:
-  flowdock:
-    secure: "Z/waFO5hoI9V9C+uJejEGZ3yJ28F7Hzbl5wHDF4hNI1i7szoKsw0jETaAaFnsPgk/9wFTzscp9/XXgqbGB6uxZrBkGtiFf2wBYYAx1gZcBoNBoqXiSlTTQg73RZcyVQsvUE7Ttlm1Vsmo6ukqqB1xcAJ1YP/rDRmhLbVcs78TK4="
+  - "6.1"

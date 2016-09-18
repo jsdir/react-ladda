@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "rules": {
+    "semi": [2, "never"],
+    "import/prefer-default-export": [0, "never"],
+    "import/no-extraneous-dependencies": [
+      "error", { "devDependencies": true }
+    ]
+  }
+}
