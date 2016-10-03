@@ -6,7 +6,7 @@ react-ladda
 [![NPM version](https://img.shields.io/npm/v/react-ladda.svg?style=flat)](https://www.npmjs.org/package/react-ladda)
 [![Code Climate](https://img.shields.io/codeclimate/github/jsdir/react-ladda.svg?style=flat)](https://codeclimate.com/github/jsdir/react-ladda)
 
-A React wrapper for [Ladda buttons](https://github.com/hakimel/Ladda).
+A React wrapper for [Ladda buttons](https://github.com/hakimel/Ladda). [Example](https://github.com/jsdir/react-ladda/blob/master/example/README.md)
 
 ## Installation
 
