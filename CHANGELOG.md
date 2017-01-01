@@ -3,11 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.5] - 2016-12-31
-### Changes
+### Changed
 - Disable button when loading
 
 ## [5.0.4] - 2016-11-09
-### Changes
+### Changed
 - Use `ladda` as a dependency instead of a peerDependency
 
 ## [5.0.1] - 2016-09-22
