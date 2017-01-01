@@ -80,6 +80,21 @@ describe('LaddaButton', () => {
     expect(wrapper.html()).to.contain('ladda-progress')
   })
 
+  it('should not disable the button if `props.loading` is falsey', () => {
+    const wrapper = mount(<LaddaButton />)
+    expect(wrapper.find('button').prop('disabled')).to.eq(undefined)
+  })
+
+  it('should disable the button if the `props.disabled` is set', () => {
+    const wrapper = mount(<LaddaButton disabled />)
+    expect(wrapper.find('button').prop('disabled')).to.eq(true)
+  })
+
+  it('should disable the button if `props.loading` is truthy', () => {
+    const wrapper = mount(<LaddaButton loading />)
+    expect(wrapper.find('button').prop('disabled')).to.eq(true)
+  })
+
   describe('ladda instance', () => {
     let createStub
     let laddaInstance
@@ -143,7 +158,7 @@ describe('LaddaButton', () => {
       expect(laddaInstance.stop).not.to.have.been.called
     })
 
-    context('when `progress` is initially set', () => {
+    context('when `props.progress` is initially set', () => {
       beforeEach(() => {
         mount(<LaddaButton progress={0.3} />)
       })
@@ -153,7 +168,7 @@ describe('LaddaButton', () => {
       })
     })
 
-    context('when `loading` is initially set to a truthy value', () => {
+    context('when `props.loading` is initially set', () => {
       beforeEach(() => {
         mount(<LaddaButton loading />)
       })

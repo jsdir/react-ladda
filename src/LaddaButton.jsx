@@ -29,6 +29,7 @@ class LaddaButton extends Component {
     className: PropTypes.string,
     progress: PropTypes.number,
     loading: PropTypes.bool,
+    disabled: PropTypes.bool,
 
     // Ladda props
     // eslint-disable-next-line react/no-unused-prop-types
@@ -89,6 +90,7 @@ class LaddaButton extends Component {
         {...omit(this.props, OMITTED_PROPS)}
         className={`ladda-button ${this.props.className || ''}`}
         ref={this.setNode}
+        disabled={this.props.disabled || this.props.loading}
       >
         <span className="ladda-label">
           {this.props.children}
