@@ -88,6 +88,11 @@ describe('LaddaButton', () => {
   it('should disable the button if the `props.disabled` is set', () => {
     const wrapper = mount(<LaddaButton disabled />)
     expect(wrapper.find('button').prop('disabled')).to.eq(true)
+    expect(wrapper.find('button')).to.have.attr('disabled')
+    wrapper.setProps({ loading: true })
+    wrapper.setProps({ loading: false })
+    expect(wrapper.find('button').prop('disabled')).to.eq(true)
+    expect(wrapper.find('button')).to.have.attr('disabled')
   })
 
   it('should disable the button if `props.loading` is truthy', () => {
