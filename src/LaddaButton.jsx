@@ -75,6 +75,9 @@ class LaddaButton extends Component {
       if (props.loading) {
         this.laddaInstance.start()
       } else if (props.disabled) {
+        // .stop removes the attribute "disabled"
+        // .disable calls .stop then adds the attribute "disabled"
+        // see https://github.com/hakimel/Ladda/blob/master/js/ladda.js
         this.laddaInstance.disable()
       } else {
         this.laddaInstance.stop()
