@@ -4,8 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [5.0.6] - 2017-02-13
 ### Changed
-- Fixed a bug where setting `loading` to `false` would remove the loading state
-  from the button.
+- Fixed a bug where setting `loading` to `false` would remove the `disabled` property from the button.
 
 ## [5.0.5] - 2016-12-31
 ### Changed
