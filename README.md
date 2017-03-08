@@ -23,7 +23,7 @@ $ npm install --save react-ladda
 ```jsx
 import React, { Component } from 'react';
 
-import LaddaButton, { XS, SLIDE_UP } from 'react-ladda';
+import LaddaButton, { XL, SLIDE_UP } from 'react-ladda';
 
 class App extends Component {
 
