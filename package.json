@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/jsdir/react-ladda#readme",
   "dependencies": {
-    "ladda": "^1.0.0"
+    "ladda": "^1.0.0",
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "babel-cli": "^6.14.0",
