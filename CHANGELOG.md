@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [5.0.7] - 2017-05-12
+### Changed
+- Use external prop-types
+
 ## [5.0.6] - 2017-02-13
 ### Changed
 - Fixed a bug where setting `loading` to `false` would remove the `disabled` property from the button.
