@@ -12,7 +12,7 @@ describe('LaddaButton', () => {
   it('should render the elements correctly', () => {
     // The correct markup that Ladda expects is defined here:
     // https://github.com/hakimel/Ladda#html
-    const wrapper = render(<LaddaButton>child</LaddaButton>)
+    const wrapper = mount(<LaddaButton>child</LaddaButton>)
     const button = wrapper.find('button.ladda-button')
     expect(button).to.be.present()
     const label = button.find('span.ladda-label')
@@ -53,7 +53,7 @@ describe('LaddaButton', () => {
   })
 
   it('should combine classNames correctly', () => {
-    const wrapper = render(
+    const wrapper = mount(
       <LaddaButton className="custom" />
     )
 
