@@ -34,7 +34,7 @@ class LaddaButton extends Component {
 
     // Ladda props
     // eslint-disable-next-line react/no-unused-prop-types
-    'data-color': PropTypes.string,
+    'data-color': PropTypes.oneOf(['green', 'red', 'blue', 'purple', 'mint']),
     // eslint-disable-next-line react/no-unused-prop-types
     'data-size': PropTypes.oneOf(SIZES),
     // eslint-disable-next-line react/no-unused-prop-types

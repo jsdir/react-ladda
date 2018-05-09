@@ -71,7 +71,7 @@ Prop                 | Type      | Description
 -------------------- | --------- | -----------
 `loading`            | `boolean` | Displays the button's loading indicator
 `progress`           | `number`  | Number from 0.0 to 1.0
-`data-color`         | `string`  | Color applied to the button (eg. `#222`)
+`data-color`         | `string`  | Color applied to the button (`{green,red,blue,purple,mint}`)
 `data-size`          | `string`  | A [button size](#sizes)
 `data-style`         | `string`  | A [button style](#styles)
 `data-spinner-size`  | `number`  | Number representing the size of the spinner in pixels
