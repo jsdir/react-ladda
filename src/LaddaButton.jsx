@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Ladda from 'ladda'
+import { create } from 'ladda'
 
 import { SIZES, STYLES } from './constants'
 
@@ -48,7 +48,7 @@ class LaddaButton extends Component {
   };
 
   componentDidMount() {
-    this.laddaInstance = Ladda.create(this.node)
+    this.laddaInstance = create(this.node)
 
     if (this.props.loading) {
       this.laddaInstance.start()
