@@ -132,14 +132,19 @@ describe('LaddaButton', () => {
 
     it('should receive setProgress call when progress is set', () => {
       const wrapper = mount(<LaddaButton />)
+      console.log('call 1')
       expect(laddaInstance.setProgress).not.to.have.been.called
 
+      console.log('call 2')
       wrapper.setProps({ progress: 0.5 })
       expect(laddaInstance.setProgress).to.have.been.calledWithExactly(0.5)
+      console.log('call 3')
       laddaInstance.setProgress.reset()
 
       wrapper.setProps({ progress: 0.6 })
+      console.log('call 4')
       expect(laddaInstance.setProgress).to.have.been.calledWithExactly(0.6)
+      console.log('call 5')
       laddaInstance.setProgress.reset()
 
       wrapper.setProps({ progress: 0.6 })
