@@ -59,7 +59,7 @@ class LaddaButton extends Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
+  shouldComponentUpdate(nextProps) {
     this.updateLaddaInstance(nextProps)
   }
 
